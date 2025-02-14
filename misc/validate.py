@@ -3,7 +3,7 @@ import re
 import json
 
 dir_list = os.listdir("/mnt/d/manga/op")
-jsons = [f for f in dir_list if re.search("\.json$", f) is not None]
+jsons = [f for f in dir_list if re.search(r"\.json$", f) is not None]
 for j in jsons:
     chapter_num = int(j.split("_")[0])
     num_files = len([f for f in dir_list if re.search(f"^{chapter_num}", f) is not None])
